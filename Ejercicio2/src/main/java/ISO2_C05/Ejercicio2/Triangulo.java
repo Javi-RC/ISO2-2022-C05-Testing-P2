@@ -74,7 +74,7 @@ public class Triangulo {
 			tipo="isosceles";
 			}
 		else {
-			tipo="escaleno";
+			tipo="escaleno";	
 			
 		}
 
@@ -85,7 +85,7 @@ public class Triangulo {
 		
 		String tipo = "";
 		double suma = triangulo.getAlpha()+ triangulo.getBeta()+triangulo.getDelta();
-		if(suma!=180) {
+		if(suma!=180.0) {
 			throw new FalloDatos("La suma de los angulos debe de ser 180");
 		}
 		if (triangulo.getAlpha()==90) {
