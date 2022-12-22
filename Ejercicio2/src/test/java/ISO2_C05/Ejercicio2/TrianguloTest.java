@@ -8,6 +8,7 @@ import org.junit.Test;
 public class TrianguloTest {
 
 	
+	
 	@Test 
 	public void testGetTipoTriangulo3() {
 		String tipo;

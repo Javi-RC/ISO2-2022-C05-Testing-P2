@@ -1,76 +1,93 @@
 package ISO2_C05.Ejercicio2;
-
+/**
+ * 
+ * @author Javier Rodriguez Castellano
+ * @author Enrique Javier Villar Cea
+ *
+ *
+ */
 public class Triangulo {
 
-	private double a; // Base
-	private double b; 
-	private double c; // Hipotenusa
+	private double ladoA;
+	private double ladoB; 
+	private double ladoC;
 	private double alpha;
 	private double beta;
 	private double delta;
-	
-	public Triangulo(double a, double b, double c, double alpha, double beta, double delta) {
-		this.a = a;
-		this.b = b;
-		this.c = c;
+/**
+ * Crear un triangulo
+ * @param ladoA lado 1 de un triangulo
+ * @param ladoB lado 2 de un triangulo
+ * @param ladoC lado 3 de un triangulo, en un triangulo rectangulo sería la hipotenusa
+ * @param alpha angulo entre ladoA y ladoB
+ * @param beta beta angulo entre ladoA y ladoC
+ * @param delta delta angulo entre ladoB y ladoC
+ */
+	public Triangulo(double ladoA, double ladoB, double ladoC, double alpha, double beta, double delta) {
+		this.ladoA = ladoA;
+		this.ladoB = ladoB;
+		this.ladoC = ladoC;
 		this.alpha = alpha;
 		this.beta = beta;
 		this.delta = delta;
 	}
-
-	public double getA() {
-		return a;
+	/**
+	 * 
+	 * @return tamaño del lado 1 de un triangulo
+	 */
+	public double getLadoA() {
+		return ladoA;
+	}
+/**
+* 
+* @return tamaño del lado 2 de un triangulo
+*/
+	public double getLadoB() {
+		return ladoB;
 	}
 
-	public void setA(double a) {
-		this.a = a;
+/**
+* 
+* @return tamaño del lado 3 de un triangulo
+*  
+*/
+	public double getLadoC() {
+		return ladoC;
 	}
-
-	public double getB() {
-		return b;
-	}
-
-	public void setB(double b) {
-		this.b = b;
-	}
-
-	public double getC() {
-		return c;
-	}
-
-	public void setC(double c) {
-		this.c = c;
-	}
-
+/**
+* 
+* @return angulo entre ladoA y ladoB
+*/
 	public double getAlpha() {
 		return alpha;
 	}
-
-	public void setAlpha(double alpha) {
-		this.alpha = alpha;
-	}
-
+/**
+* 
+* @return angulo entre ladoA y ladoC
+*/
 	public double getBeta() {
 		return beta;
 	}
 
-	public void setBeta(double beta) {
-		this.beta = beta;
-	}
-
+/**
+* 
+* @return angulo entre ladoB y ladoC
+*/
 	public double getDelta() {
 		return delta;
 	}
-
-	public void setDelta(double delta) {
-		this.delta = delta;
-	}
+/**
+* 
+* Función que devuelve el tipo de triangulo dependiendo de sus lados
+* @param triangulo El triangulo del que se quiere conecer su tipo
+* @return El tipo de triangulo: equilatero, isosceles o escaleno
+*/
 	private String getTipoLadosTriangulo(Triangulo triangulo) {
 		
 		String tipo="";
-		if (triangulo.getA()==triangulo.getB() && triangulo.getB() == triangulo.getC())
+		if (triangulo.getLadoA()==triangulo.getLadoB() && triangulo.getLadoB() == triangulo.getLadoC())
 			tipo="equilatero";
-		else if(triangulo.getB()==triangulo.getC()){
+		else if(triangulo.getLadoB()==triangulo.getLadoC()){
 			tipo="isosceles";
 			}
 		else {
@@ -80,7 +97,12 @@ public class Triangulo {
 
 		return tipo;
 	}
-	
+/**
+* Función que devuelve el tipo de triangulo dependiendo de sus angulos
+* @param triangulo El triangulo del que se quiere conecer su tipo
+* @return El tipo de triangulo: rectangulo, obtusangulo, acutangulo
+* @throws FalloDatos, cuando la suma de los angulos del triangulo no son iguales a 180
+*/
 	private String getTipoAnguloTriangulo(Triangulo triangulo)throws FalloDatos{
 		
 		String tipo = "";
@@ -100,12 +122,18 @@ public class Triangulo {
 		}
 		return tipo;
 	}
-	
+/**
+* Funcion para obtener el tipo de triangulo
+* @param triangulo El triangulo del que se quiere conocer su tipo
+* @param decision obtener el tipo de triangulo. True: segun los lados, False: segun sus angulos
+* @return tipo El tipo de triangulo
+* @throws FalloDatos Lanzada cuando algun parametro del triangulo es menor o igual a 0 o si la suma de sus angulos en menor a 180
+*/	
 	public String getTipoTriangulo(Triangulo triangulo,boolean decision) throws FalloDatos {
 		String tipo="";
 		
-		if (triangulo.getA()<=0 || triangulo.getB() <=0 ||
-			triangulo.getC() <=0 || triangulo.getAlpha()<=0 ||
+		if (triangulo.getLadoA()<=0 || triangulo.getLadoB() <=0 ||
+			triangulo.getLadoC() <=0 || triangulo.getAlpha()<=0 ||
 			triangulo.getBeta()<=0 || triangulo.getDelta()<=0) {
 			throw new FalloDatos("Los lados y angulos deben ser mayor que 0");
 		}
