@@ -2,44 +2,44 @@ package ISO2_C05.Ejercicio2;
 
 public class Triangulo {
 
-	private double a; // Base
-	private double b; 
-	private double c; // Hipotenusa
+	private double ladoA; // Base
+	private double ladoB; 
+	private double ladoC; // Hipotenusa
 	private double alpha;
 	private double beta;
 	private double delta;
 	
-	public Triangulo(double a, double b, double c, double alpha, double beta, double delta) {
-		this.a = a;
-		this.b = b;
-		this.c = c;
+	public Triangulo(double ladoA, double ladoB, double ladoC, double alpha, double beta, double delta) {
+		this.ladoA = ladoA;
+		this.ladoB = ladoB;
+		this.ladoC = ladoC;
 		this.alpha = alpha;
 		this.beta = beta;
 		this.delta = delta;
 	}
 
-	public double getA() {
-		return a;
+	public double getLadoA() {
+		return ladoA;
 	}
 
 	public void setA(double a) {
-		this.a = a;
+		this.ladoA = a;
 	}
 
-	public double getB() {
-		return b;
+	public double getLadoB() {
+		return ladoB;
 	}
 
 	public void setB(double b) {
-		this.b = b;
+		this.ladoB = b;
 	}
 
-	public double getC() {
-		return c;
+	public double getLadoC() {
+		return ladoC;
 	}
 
 	public void setC(double c) {
-		this.c = c;
+		this.ladoC = c;
 	}
 
 	public double getAlpha() {
@@ -68,9 +68,9 @@ public class Triangulo {
 	private String getTipoLadosTriangulo(Triangulo triangulo) {
 		
 		String tipo="";
-		if (triangulo.getA()==triangulo.getB() && triangulo.getB() == triangulo.getC())
+		if (triangulo.getLadoA()==triangulo.getLadoB() && triangulo.getLadoB() == triangulo.getLadoC())
 			tipo="equilatero";
-		else if(triangulo.getB()==triangulo.getC()){
+		else if(triangulo.getLadoB()==triangulo.getLadoC()){
 			tipo="isosceles";
 			}
 		else {
@@ -104,8 +104,8 @@ public class Triangulo {
 	public String getTipoTriangulo(Triangulo triangulo,boolean decision) throws FalloDatos {
 		String tipo="";
 		
-		if (triangulo.getA()<=0 || triangulo.getB() <=0 ||
-			triangulo.getC() <=0 || triangulo.getAlpha()<=0 ||
+		if (triangulo.getLadoA()<=0 || triangulo.getLadoB() <=0 ||
+			triangulo.getLadoC() <=0 || triangulo.getAlpha()<=0 ||
 			triangulo.getBeta()<=0 || triangulo.getDelta()<=0) {
 			throw new FalloDatos("Los lados y angulos deben ser mayor que 0");
 		}
