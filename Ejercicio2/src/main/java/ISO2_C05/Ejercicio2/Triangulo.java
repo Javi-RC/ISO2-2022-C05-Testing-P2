@@ -10,7 +10,7 @@ package ISO2_C05.Ejercicio2;
 public class Triangulo {
 
 	private double ladoA;
-	private double b; 
+	private double ladoB; 
 	private double ladoC;
 	private double alpha;
 	private double beta;
@@ -27,7 +27,7 @@ public class Triangulo {
  */
 	public Triangulo(double ladoA, double ladoB, double ladoC, double alpha, double beta, double delta) {
 		this.ladoA = ladoA;
-		this.b = ladoB;
+		this.ladoB = ladoB;
 		this.ladoC = ladoC;
 		this.alpha = alpha;
 		this.beta = beta;
@@ -37,7 +37,7 @@ public class Triangulo {
  * 
  * @return tamaño del lado 1 de un triangulo
  */
-	public double getA() {
+	public double getLadoA() {
 		return ladoA;
 	}
 
@@ -45,15 +45,15 @@ public class Triangulo {
  * 
  * @return tamaño del lado 2 de un triangulo
  */
-	public double getB() {
-		return b;
+	public double getLadoB() {
+		return ladoB;
 	}
 
 /**
  * 
  * @return tamaño del lado 3 de un triangulo
  *  */
-	public double getC() {
+	public double getLadoC() {
 		return ladoC;
 	}
 
@@ -90,9 +90,9 @@ public class Triangulo {
 	private String getTipoLadosTriangulo(Triangulo triangulo) {
 		
 		String tipo="";
-		if (triangulo.getA()==triangulo.getB() && triangulo.getB() == triangulo.getC())
+		if (triangulo.getLadoA()==triangulo.getLadoB() && triangulo.getLadoB() == triangulo.getLadoC())
 			tipo="equilatero";
-		else if(triangulo.getB()==triangulo.getC()){
+		else if(triangulo.getLadoB()==triangulo.getLadoC()){
 			tipo="isosceles";
 			}
 		else {
@@ -137,8 +137,8 @@ public class Triangulo {
 	public String getTipoTriangulo(Triangulo triangulo,boolean decision) throws FalloDatos {
 		String tipo="";
 		
-		if (triangulo.getA()<=0 || triangulo.getB() <=0 ||
-			triangulo.getC() <=0 || triangulo.getAlpha()<=0 ||
+		if (triangulo.getLadoA()<=0 || triangulo.getLadoB() <=0 ||
+			triangulo.getLadoC() <=0 || triangulo.getAlpha()<=0 ||
 			triangulo.getBeta()<=0 || triangulo.getDelta()<=0) {
 			throw new FalloDatos("Los lados y angulos deben ser mayor que 0");
 		}
