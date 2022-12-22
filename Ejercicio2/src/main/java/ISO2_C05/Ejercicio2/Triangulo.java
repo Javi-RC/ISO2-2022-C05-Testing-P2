@@ -2,9 +2,9 @@ package ISO2_C05.Ejercicio2;
 
 public class Triangulo {
 
-	private double ladoA; // Base
+	private double ladoA;
 	private double ladoB; 
-	private double ladoC; // Hipotenusa
+	private double ladoC;
 	private double alpha;
 	private double beta;
 	private double delta;
@@ -22,49 +22,28 @@ public class Triangulo {
 		return ladoA;
 	}
 
-	public void setA(double a) {
-		this.ladoA = a;
-	}
-
 	public double getLadoB() {
 		return ladoB;
 	}
 
-	public void setB(double b) {
-		this.ladoB = b;
-	}
 
 	public double getLadoC() {
 		return ladoC;
-	}
-
-	public void setC(double c) {
-		this.ladoC = c;
 	}
 
 	public double getAlpha() {
 		return alpha;
 	}
 
-	public void setAlpha(double alpha) {
-		this.alpha = alpha;
-	}
-
 	public double getBeta() {
 		return beta;
 	}
 
-	public void setBeta(double beta) {
-		this.beta = beta;
-	}
 
 	public double getDelta() {
 		return delta;
 	}
 
-	public void setDelta(double delta) {
-		this.delta = delta;
-	}
 	private String getTipoLadosTriangulo(Triangulo triangulo) {
 		
 		String tipo="";
