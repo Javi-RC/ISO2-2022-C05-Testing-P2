@@ -179,7 +179,6 @@
 				</reportSets>
 			</plugin>
 
-<!--   commented for lab session concerni
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
@@ -209,7 +208,6 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
 				</plugin>		
--->
 		</plugins>
 	</reporting>
 

@@ -1,125 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Triangulo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ejercicio2</a> &gt; <a href="index.source.html" class="el_package">ISO2_C05.Ejercicio2</a> &gt; <span class="el_source">Triangulo.java</span></div><h1>Triangulo.java</h1><pre class="source lang-java linenums">package ISO2_C05.Ejercicio2;
-
+/**
+ * 
+ * @author Javier Rodriguez Castellano
+ * @author Enrique Javier Villar Cea
+ *
+ *
+ */
 public class Triangulo {
 
-	private double a; // Base
-	private double b; 
-	private double c; // Hipotenusa
+	private double ladoA;
+	private double ladoB; 
+	private double ladoC;
 	private double alpha;
 	private double beta;
 	private double delta;
-	
-<span class="fc" id="L12">	public Triangulo(double a, double b, double c, double alpha, double beta, double delta) {</span>
-<span class="fc" id="L13">		this.a = a;</span>
-<span class="fc" id="L14">		this.b = b;</span>
-<span class="fc" id="L15">		this.c = c;</span>
-<span class="fc" id="L16">		this.alpha = alpha;</span>
-<span class="fc" id="L17">		this.beta = beta;</span>
-<span class="fc" id="L18">		this.delta = delta;</span>
-<span class="fc" id="L19">	}</span>
-
-	public double getA() {
-<span class="fc" id="L22">		return a;</span>
+/**
+ * Crear un triangulo
+ * @param ladoA lado 1 de un triangulo
+ * @param ladoB lado 2 de un triangulo
+ * @param ladoC lado 3 de un triangulo, en un triangulo rectangulo sería la hipotenusa
+ * @param alpha angulo entre ladoA y ladoB
+ * @param beta beta angulo entre ladoA y ladoC
+ * @param delta delta angulo entre ladoB y ladoC
+ */
+<span class="fc" id="L26">	public Triangulo(double ladoA, double ladoB, double ladoC, double alpha, double beta, double delta) {</span>
+<span class="fc" id="L27">		this.ladoA = ladoA;</span>
+<span class="fc" id="L28">		this.ladoB = ladoB;</span>
+<span class="fc" id="L29">		this.ladoC = ladoC;</span>
+<span class="fc" id="L30">		this.alpha = alpha;</span>
+<span class="fc" id="L31">		this.beta = beta;</span>
+<span class="fc" id="L32">		this.delta = delta;</span>
+<span class="fc" id="L33">	}</span>
+	/**
+	 * 
+	 * @return tamaño del lado 1 de un triangulo
+	 */
+	public double getLadoA() {
+<span class="fc" id="L39">		return ladoA;</span>
+	}
+/**
+* 
+* @return tamaño del lado 2 de un triangulo
+*/
+	public double getLadoB() {
+<span class="fc" id="L46">		return ladoB;</span>
 	}
 
-	public void setA(double a) {
-<span class="nc" id="L26">		this.a = a;</span>
-<span class="nc" id="L27">	}</span>
-
-	public double getB() {
-<span class="fc" id="L30">		return b;</span>
+/**
+* 
+* @return tamaño del lado 3 de un triangulo
+*  
+*/
+	public double getLadoC() {
+<span class="fc" id="L55">		return ladoC;</span>
 	}
-
-	public void setB(double b) {
-<span class="nc" id="L34">		this.b = b;</span>
-<span class="nc" id="L35">	}</span>
-
-	public double getC() {
-<span class="fc" id="L38">		return c;</span>
-	}
-
-	public void setC(double c) {
-<span class="nc" id="L42">		this.c = c;</span>
-<span class="nc" id="L43">	}</span>
-
+/**
+* 
+* @return angulo entre ladoA y ladoB
+*/
 	public double getAlpha() {
-<span class="fc" id="L46">		return alpha;</span>
+<span class="fc" id="L62">		return alpha;</span>
 	}
-
-	public void setAlpha(double alpha) {
-<span class="nc" id="L50">		this.alpha = alpha;</span>
-<span class="nc" id="L51">	}</span>
-
+/**
+* 
+* @return angulo entre ladoA y ladoC
+*/
 	public double getBeta() {
-<span class="fc" id="L54">		return beta;</span>
+<span class="fc" id="L69">		return beta;</span>
 	}
 
-	public void setBeta(double beta) {
-<span class="nc" id="L58">		this.beta = beta;</span>
-<span class="nc" id="L59">	}</span>
-
+/**
+* 
+* @return angulo entre ladoB y ladoC
+*/
 	public double getDelta() {
-<span class="fc" id="L62">		return delta;</span>
+<span class="fc" id="L77">		return delta;</span>
 	}
-
-	public void setDelta(double delta) {
-<span class="nc" id="L66">		this.delta = delta;</span>
-<span class="nc" id="L67">	}</span>
+/**
+* 
+* Función que devuelve el tipo de triangulo dependiendo de sus lados
+* @param triangulo El triangulo del que se quiere conecer su tipo
+* @return El tipo de triangulo: equilatero, isosceles o escaleno
+*/
 	private String getTipoLadosTriangulo(Triangulo triangulo) {
 		
-<span class="fc" id="L70">		String tipo=&quot;&quot;;</span>
-<span class="pc bpc" id="L71" title="1 of 4 branches missed.">		if (triangulo.getA()==triangulo.getB() &amp;&amp; triangulo.getB() == triangulo.getC())</span>
-<span class="fc" id="L72">			tipo=&quot;equilatero&quot;;</span>
-<span class="fc bfc" id="L73" title="All 2 branches covered.">		else if(triangulo.getB()==triangulo.getC()){</span>
-<span class="fc" id="L74">			tipo=&quot;isosceles&quot;;</span>
+<span class="fc" id="L87">		String tipo=&quot;&quot;;</span>
+<span class="pc bpc" id="L88" title="1 of 4 branches missed.">		if (triangulo.getLadoA()==triangulo.getLadoB() &amp;&amp; triangulo.getLadoB() == triangulo.getLadoC())</span>
+<span class="fc" id="L89">			tipo=&quot;equilatero&quot;;</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">		else if(triangulo.getLadoB()==triangulo.getLadoC()){</span>
+<span class="fc" id="L91">			tipo=&quot;isosceles&quot;;</span>
 			}
 		else {
-<span class="fc" id="L77">			tipo=&quot;escaleno&quot;;	</span>
+<span class="fc" id="L94">			tipo=&quot;escaleno&quot;;	</span>
 			
 		}
 
-<span class="fc" id="L81">		return tipo;</span>
+<span class="fc" id="L98">		return tipo;</span>
 	}
-	
+/**
+* Función que devuelve el tipo de triangulo dependiendo de sus angulos
+* @param triangulo El triangulo del que se quiere conecer su tipo
+* @return El tipo de triangulo: rectangulo, obtusangulo, acutangulo
+* @throws FalloDatos, cuando la suma de los angulos del triangulo no son iguales a 180
+*/
 	private String getTipoAnguloTriangulo(Triangulo triangulo)throws FalloDatos{
 		
-<span class="fc" id="L86">		String tipo = &quot;&quot;;</span>
-<span class="fc" id="L87">		double suma = triangulo.getAlpha()+ triangulo.getBeta()+triangulo.getDelta();</span>
-<span class="fc bfc" id="L88" title="All 2 branches covered.">		if(suma!=180.0) {</span>
-<span class="fc" id="L89">			throw new FalloDatos(&quot;La suma de los angulos debe de ser 180&quot;);</span>
+<span class="fc" id="L108">		String tipo = &quot;&quot;;</span>
+<span class="fc" id="L109">		double suma = triangulo.getAlpha()+ triangulo.getBeta()+triangulo.getDelta();</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">		if(suma!=180.0) {</span>
+<span class="fc" id="L111">			throw new FalloDatos(&quot;La suma de los angulos debe de ser 180&quot;);</span>
 		}
-<span class="fc bfc" id="L91" title="All 2 branches covered.">		if (triangulo.getAlpha()==90) {</span>
-<span class="fc" id="L92">			tipo = &quot;rectangulo&quot;;</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">		if (triangulo.getAlpha()==90) {</span>
+<span class="fc" id="L114">			tipo = &quot;rectangulo&quot;;</span>
 		}
-<span class="fc bfc" id="L94" title="All 2 branches covered.">		else if(triangulo.getAlpha()&gt;90) {</span>
-<span class="fc" id="L95">			tipo=&quot;obtusangulo&quot;;</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">		else if(triangulo.getAlpha()&gt;90) {</span>
+<span class="fc" id="L117">			tipo=&quot;obtusangulo&quot;;</span>
 		}
 		else{
 			
-<span class="fc" id="L99">			tipo=&quot;acutangulo&quot;;</span>
+<span class="fc" id="L121">			tipo=&quot;acutangulo&quot;;</span>
 		}
-<span class="fc" id="L101">		return tipo;</span>
+<span class="fc" id="L123">		return tipo;</span>
 	}
-	
+/**
+* Funcion para obtener el tipo de triangulo
+* @param triangulo El triangulo del que se quiere conocer su tipo
+* @param decision obtener el tipo de triangulo. True: segun los lados, False: segun sus angulos
+* @return tipo El tipo de triangulo
+* @throws FalloDatos Lanzada cuando algun parametro del triangulo es menor o igual a 0 o si la suma de sus angulos en menor a 180
+*/	
 	public String getTipoTriangulo(Triangulo triangulo,boolean decision) throws FalloDatos {
-<span class="fc" id="L105">		String tipo=&quot;&quot;;</span>
+<span class="fc" id="L133">		String tipo=&quot;&quot;;</span>
 		
-<span class="pc bpc" id="L107" title="1 of 4 branches missed.">		if (triangulo.getA()&lt;=0 || triangulo.getB() &lt;=0 ||</span>
-<span class="pc bpc" id="L108" title="2 of 4 branches missed.">			triangulo.getC() &lt;=0 || triangulo.getAlpha()&lt;=0 ||</span>
-<span class="pc bpc" id="L109" title="2 of 4 branches missed.">			triangulo.getBeta()&lt;=0 || triangulo.getDelta()&lt;=0) {</span>
-<span class="fc" id="L110">			throw new FalloDatos(&quot;Los lados y angulos deben ser mayor que 0&quot;);</span>
+<span class="pc bpc" id="L135" title="1 of 4 branches missed.">		if (triangulo.getLadoA()&lt;=0 || triangulo.getLadoB() &lt;=0 ||</span>
+<span class="pc bpc" id="L136" title="2 of 4 branches missed.">			triangulo.getLadoC() &lt;=0 || triangulo.getAlpha()&lt;=0 ||</span>
+<span class="pc bpc" id="L137" title="2 of 4 branches missed.">			triangulo.getBeta()&lt;=0 || triangulo.getDelta()&lt;=0) {</span>
+<span class="fc" id="L138">			throw new FalloDatos(&quot;Los lados y angulos deben ser mayor que 0&quot;);</span>
 		}
 			
 			
-<span class="fc bfc" id="L114" title="All 2 branches covered.">		if (decision) {</span>
-<span class="fc" id="L115">			tipo=getTipoLadosTriangulo(triangulo);</span>
+<span class="fc bfc" id="L142" title="All 2 branches covered.">		if (decision) {</span>
+<span class="fc" id="L143">			tipo=getTipoLadosTriangulo(triangulo);</span>
 		}
 		else {
 			
-<span class="fc" id="L119">			tipo=getTipoAnguloTriangulo(triangulo);</span>
+<span class="fc" id="L147">			tipo=getTipoAnguloTriangulo(triangulo);</span>
 		}
 
-<span class="fc" id="L122">		return tipo;</span>
+<span class="fc" id="L150">		return tipo;</span>
 	}
 
 
