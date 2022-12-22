@@ -1,12 +1,5 @@
 package ISO2_C05.Ejercicio2;
 
-/**
- * 
- * @author Javier Rodriguez Castellano
- * @author Enrique Javier Villar Cea
- *
- *
- */
 public class Triangulo {
 
 	private double ladoA; // Base
@@ -16,15 +9,6 @@ public class Triangulo {
 	private double beta;
 	private double delta;
 	
-/**
- * 
- * @param ladoA lado 1 de un triangulo
- * @param ladoB lado 2 de un triangulo
- * @param ladoC lado 3 de un triangulo, en un triangulo rectangulo sería la hipotenusa
- * @param alpha angulo entre ladoA y ladoB
- * @param beta angulo entre ladoA y ladoC
- * @param delta angulo entre ladoB y ladoC
- */
 	public Triangulo(double ladoA, double ladoB, double ladoC, double alpha, double beta, double delta) {
 		this.ladoA = ladoA;
 		this.ladoB = ladoB;
@@ -33,60 +17,54 @@ public class Triangulo {
 		this.beta = beta;
 		this.delta = delta;
 	}
-/**
- * 
- * @return tamaño del lado 1 de un triangulo
- */
+
 	public double getLadoA() {
 		return ladoA;
 	}
 
-/**
- * 
- * @return tamaño del lado 2 de un triangulo
- */
+	public void setA(double a) {
+		this.ladoA = a;
+	}
+
 	public double getLadoB() {
 		return ladoB;
 	}
 
-/**
- * 
- * @return tamaño del lado 3 de un triangulo
- *  */
+	public void setB(double b) {
+		this.ladoB = b;
+	}
+
 	public double getLadoC() {
 		return ladoC;
 	}
 
-/**
- * 
- * @return angulo entre ladoA y ladoB
- */
+	public void setC(double c) {
+		this.ladoC = c;
+	}
+
 	public double getAlpha() {
 		return alpha;
 	}
 
-/**
- * 
- * @return angulo entre ladoA y ladoC
- */
+	public void setAlpha(double alpha) {
+		this.alpha = alpha;
+	}
+
 	public double getBeta() {
 		return beta;
 	}
 
-/**
- * 
- * @return angulo entre ladoB y ladoC
- */
+	public void setBeta(double beta) {
+		this.beta = beta;
+	}
+
 	public double getDelta() {
 		return delta;
 	}
 
-/**
- * 
- * Función que devuelve el tipo de triangulo dependiendo de sus lados
- * @param triangulo El triangulo del que se quiere conecer su tipo
- * @return El tipo de triangulo: equilatero, isosceles o escaleno
- */
+	public void setDelta(double delta) {
+		this.delta = delta;
+	}
 	private String getTipoLadosTriangulo(Triangulo triangulo) {
 		
 		String tipo="";
@@ -102,12 +80,7 @@ public class Triangulo {
 
 		return tipo;
 	}
-/**
- * Función que devuelve el tipo de triangulo dependiendo de sus angulos
- * @param triangulo El triangulo del que se quiere conecer su tipo
- * @return El tipo de triangulo: rectangulo, obtusangulo, acutangulo
- * @throws FalloDatos, cuando la suma de los angulos del triangulo no son iguales a 180
- */
+	
 	private String getTipoAnguloTriangulo(Triangulo triangulo)throws FalloDatos{
 		
 		String tipo = "";
@@ -127,13 +100,7 @@ public class Triangulo {
 		}
 		return tipo;
 	}
-/**
- * Funcion para obtener el tipo de triangulo
- * @param triangulo El triangulo del que se quiere conocer su tipo
- * @param decision obtener el tipo de triangulo. True: segun los lados, False: segun sus angulos
- * @return tipo El tipo de triangulo
- * @throws FalloDatos Lanzada cuando algun parametro del triangulo es menor o igual a 0
- */
+	
 	public String getTipoTriangulo(Triangulo triangulo,boolean decision) throws FalloDatos {
 		String tipo="";
 		
