@@ -9,9 +9,9 @@ package ISO2_C05.Ejercicio2;
  */
 public class Triangulo {
 
-	private double ladoA;
+	private double ladoA; // Base
 	private double ladoB; 
-	private double ladoC;
+	private double ladoC; // Hipotenusa
 	private double alpha;
 	private double beta;
 	private double delta;
